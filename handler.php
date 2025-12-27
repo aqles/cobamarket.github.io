@@ -36,3 +36,4 @@ if ($aksi=='konfirmasi') {
 	$db->konfirmasi($_POST['kode_pembelian'],$_POST['nama_bank'],$_POST['tgl'],$_POST['pesan'],$loc);
 	}
  ?>
+

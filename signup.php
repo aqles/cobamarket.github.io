@@ -213,7 +213,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 			<div class="footer-info w3-agileits-info">
 				<div class="col-md-4 address-left agileinfo">
 					<div class="footer-logo header-logo">
-						<h2><a href="index.html"><span>S</span>mart <i>Bazaar</i></a></h2>
+						<h2><a href="index.php"><span>S</span>mart <i>Bazaar</i></a></h2>
 						<h6>Your stores. Your place.</h6>
 					</div>
 					<ul>
@@ -227,20 +227,20 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 					<div class="col-md-4 footer-grids">
 						<h3>Company</h3>
 						<ul>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="marketplace.html">Marketplace</a></li>  
-							<li><a href="values.html">Core Values</a></li>  
-							<li><a href="privacy.html">Privacy Policy</a></li>
+							<li><a href="about.php">About Us</a></li>
+							<li><a href="marketplace.php">Marketplace</a></li>  
+							<li><a href="values.php">Core Values</a></li>  
+							<li><a href="privacy.php">Privacy Policy</a></li>
 						</ul>
 					</div>
 					<div class="col-md-4 footer-grids">
 						<h3>Services</h3>
 						<ul>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li><a href="login.html">Returns</a></li> 
-							<li><a href="faq.html">FAQ</a></li>
-							<li><a href="sitemap.html">Site Map</a></li>
-							<li><a href="login.html">Order Status</a></li>
+							<li><a href="contact.php">Contact Us</a></li>
+							<li><a href="login.php">Returns</a></li> 
+							<li><a href="faq.php">FAQ</a></li>
+							<li><a href="sitemap.php">Site Map</a></li>
+							<li><a href="login.php">Order Status</a></li>
 						</ul> 
 					</div>
 					<div class="col-md-4 footer-grids">
@@ -294,3 +294,4 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
+

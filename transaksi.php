@@ -165,7 +165,7 @@ td a{background: #2ecc71; padding: 5px; color: #fff; border-radius: 3px;}
     </table>
 </center>
   
-	<?php include 'fotter.php'; ?>
+	<?php include 'footer.php'; ?>
 	<!-- cart-js -->
 	<script src="js/minicart.js"></script>
 	<script>
@@ -198,3 +198,4 @@ td a{background: #2ecc71; padding: 5px; color: #fff; border-radius: 3px;}
 	<?php
 	}
 ?>
+
