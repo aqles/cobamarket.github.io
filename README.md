@@ -57,3 +57,13 @@ Some files referenced in the code appear to be missing from the repository:
 - `single.html`/`single.php`
 
 Links to these pages may result in 404 errors until the files are created.
+
+## License & Attribution
+
+This project is built upon the **Smart Bazaar** template designed by [W3Layouts](http://w3layouts.com).
+
+- **Template Name**: Smart Bazaar
+- **License**: Creative Commons Attribution 3.0 Unported
+- **Author**: W3Layouts
+
+Even though this project has been modified, the original design credit goes to W3Layouts. Please respect their licensing terms by keeping the footer credits or purchasing a license if you intend to remove them.
