@@ -7,10 +7,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Smart Bazaar an E-commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Offers :: w3layouts</title>
+<title>StoreTerate an E-commerce Online Shopping Category Flat Bootstrap Responsive Website Template | Offers :: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Smart Bazaar Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+<meta name="keywords" content="StoreTerate Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
 SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 		function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -967,7 +967,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 				</div>
 				<div class="col-md-4 offer-card-grids">
 					<h4>Earn $20</h4>
-					<p>Refer a friend and earn $20 in Smart bazaar!</p>
+					<p>Refer a friend and earn $20 in StoreTerate!</p>
 					<a href="products.php">Shop Now <i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 				</div>
 				<div class="col-md-4 offer-card-grids">
@@ -1120,7 +1120,7 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
 	<!-- //footer -->		
 	<div class="copy-right"> 
 		<div class="container">
-			<p>© 2016 Smart bazaar . All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
+			<p>© 2016 StoreTerate . All rights reserved | Design by <a href="http://w3layouts.com"> W3layouts.</a></p>
 		</div>
 	</div> 
 	<!-- cart-js -->
@@ -1152,4 +1152,5 @@ SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony
     <script src="js/bootstrap.js"></script>
 </body>
 </html>
+
 

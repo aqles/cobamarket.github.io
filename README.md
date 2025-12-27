@@ -1,6 +1,14 @@
 # StoreTerate (Smart Bazaar Template)
 
-This is an E-commerce web application template customized as "StoreTerate". It features a responsive design, product listings, shopping cart functionality, and an admin panel.
+This is an E-commerce web application template customized as "StoreTerate". 
+
+## Features
+
+- **Responsive Design**: Built with Bootstrap for mobile-friendly layouts.
+- **Product Management**: Browse products by category (Electronics, Fashion, etc.).
+- **Shopping Cart**: Add items, view cart, and checkout.
+- **Order Tracking**: Track order status from payment to delivery (Paid, Shipped, Delivered, Completed).
+- **Admin Panel**: Manage products and transactions.
 
 ## Technology Stack
 
@@ -51,12 +59,7 @@ The following improvements and fixes have been applied to the original codebase:
 ## Important Note on Hosting
 This project utilizes **PHP**, which requires a server-side processor. It will **NOT** work on static hosting services like **GitHub Pages** (which only supports HTML/CSS/JS). Use a hosting provider that supports PHP and MySQL.
 
-## Known Issues (Missing Files)
-Some files referenced in the code appear to be missing from the repository:
-- `products.html`/`products.php` (and numbered variants `products1` to `products9`)
-- `single.html`/`single.php`
 
-Links to these pages may result in 404 errors until the files are created.
 
 ## License & Attribution
 
@@ -66,4 +69,4 @@ This project is built upon the **Smart Bazaar** template designed by [W3Layouts]
 - **License**: Creative Commons Attribution 3.0 Unported
 - **Author**: W3Layouts
 
-Even though this project has been modified, the original design credit goes to W3Layouts. Please respect their licensing terms by keeping the footer credits or purchasing a license if you intend to remove them.
+Even though this project has been heavily modified by me, the original design credit goes to W3Layouts. Please respect their licensing terms by keeping the footer credits or purchasing a license if you intend to remove them.

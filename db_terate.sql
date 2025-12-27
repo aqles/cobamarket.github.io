@@ -1,41 +1,35 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.2
--- http://www.phpmyadmin.net
---
--- Inang: localhost
--- Waktu pembuatan: 29 Nov 2016 pada 19.34
--- Versi Server: 5.5.25a
--- Versi PHP: 5.4.4
+-- Modernized for StoreTerate Project
+-- Generated on: 2025-12-27
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Basis data: `db_terate`
+-- Database: `db_terate`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `admin`
+-- Table structure for table `admin`
 --
 
-CREATE TABLE IF NOT EXISTS `admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(10) NOT NULL,
-  `password` varchar(10) NOT NULL,
-  `nama` varchar(10) NOT NULL,
+CREATE TABLE `admin` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `nama` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id`, `username`, `password`, `nama`) VALUES
@@ -44,17 +38,17 @@ INSERT INTO `admin` (`id`, `username`, `password`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kabupaten`
+-- Table structure for table `kabupaten`
 --
 
-CREATE TABLE IF NOT EXISTS `kabupaten` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `kabupaten` varchar(50) NOT NULL,
+CREATE TABLE `kabupaten` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kabupaten` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `kabupaten`
+-- Dumping data for table `kabupaten`
 --
 
 INSERT INTO `kabupaten` (`id`, `kabupaten`) VALUES
@@ -63,17 +57,17 @@ INSERT INTO `kabupaten` (`id`, `kabupaten`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `katalog`
+-- Table structure for table `katalog`
 --
 
-CREATE TABLE IF NOT EXISTS `katalog` (
-  `id_katalog` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_katalog` varchar(10) NOT NULL,
+CREATE TABLE `katalog` (
+  `id_katalog` int NOT NULL AUTO_INCREMENT,
+  `nama_katalog` varchar(100) NOT NULL,
   PRIMARY KEY (`id_katalog`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `katalog`
+-- Dumping data for table `katalog`
 --
 
 INSERT INTO `katalog` (`id_katalog`, `nama_katalog`) VALUES
@@ -87,17 +81,17 @@ INSERT INTO `katalog` (`id_katalog`, `nama_katalog`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `kelompok`
+-- Table structure for table `kelompok`
 --
 
-CREATE TABLE IF NOT EXISTS `kelompok` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(15) NOT NULL,
+CREATE TABLE `kelompok` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nama` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `kelompok`
+-- Dumping data for table `kelompok`
 --
 
 INSERT INTO `kelompok` (`id`, `nama`) VALUES
@@ -113,21 +107,21 @@ INSERT INTO `kelompok` (`id`, `nama`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `konfirmasi`
+-- Table structure for table `konfirmasi`
 --
 
-CREATE TABLE IF NOT EXISTS `konfirmasi` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `kode_pembelian` varchar(15) NOT NULL,
-  `nama_bank` varchar(10) NOT NULL,
+CREATE TABLE `konfirmasi` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `kode_pembelian` varchar(50) NOT NULL,
+  `nama_bank` varchar(50) NOT NULL,
   `tgl` date NOT NULL,
   `pesan` text NOT NULL,
-  `gambar` varchar(100) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `konfirmasi`
+-- Dumping data for table `konfirmasi`
 --
 
 INSERT INTO `konfirmasi` (`id`, `kode_pembelian`, `nama_bank`, `tgl`, `pesan`, `gambar`) VALUES
@@ -140,27 +134,27 @@ INSERT INTO `konfirmasi` (`id`, `kode_pembelian`, `nama_bank`, `tgl`, `pesan`, `
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `pembeli`
+-- Table structure for table `pembeli`
 --
 
-CREATE TABLE IF NOT EXISTS `pembeli` (
-  `id_pembeli` int(11) NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `nama_lengkap` varchar(100) NOT NULL,
-  `email` varchar(30) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `alamat` varchar(200) NOT NULL,
-  `provinsi` varchar(50) NOT NULL,
-  `kabupaten` varchar(50) NOT NULL,
-  `kecamatan` varchar(50) NOT NULL,
-  `kode_pos` varchar(10) NOT NULL,
-  `no_telp` varchar(16) NOT NULL,
-  `estimasi` int(11) NOT NULL,
+CREATE TABLE `pembeli` (
+  `id_pembeli` int NOT NULL AUTO_INCREMENT,
+  `username` varchar(100) NOT NULL,
+  `nama_lengkap` varchar(200) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `alamat` text NOT NULL,
+  `provinsi` varchar(100) NOT NULL,
+  `kabupaten` varchar(100) NOT NULL,
+  `kecamatan` varchar(100) NOT NULL,
+  `kode_pos` varchar(20) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
+  `estimasi` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id_pembeli`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `pembeli`
+-- Dumping data for table `pembeli`
 --
 
 INSERT INTO `pembeli` (`id_pembeli`, `username`, `nama_lengkap`, `email`, `password`, `alamat`, `provinsi`, `kabupaten`, `kecamatan`, `kode_pos`, `no_telp`, `estimasi`) VALUES
@@ -173,25 +167,25 @@ INSERT INTO `pembeli` (`id_pembeli`, `username`, `nama_lengkap`, `email`, `passw
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk`
+-- Table structure for table `produk`
 --
 
-CREATE TABLE IF NOT EXISTS `produk` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama_produk` varchar(100) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `gambar` varchar(200) NOT NULL,
-  `kelompok` varchar(15) NOT NULL,
-  `katalog` varchar(10) NOT NULL,
-  `diskon` varchar(10) NOT NULL,
-  `ket` varchar(2000) NOT NULL,
-  `qty` int(11) NOT NULL,
-  `kategori` varchar(50) NOT NULL,
+CREATE TABLE `produk` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nama_produk` varchar(200) NOT NULL,
+  `harga` int NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `kelompok` varchar(100) NOT NULL,
+  `katalog` varchar(100) NOT NULL,
+  `diskon` varchar(50) NOT NULL,
+  `ket` text NOT NULL,
+  `qty` int NOT NULL DEFAULT '0',
+  `kategori` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `produk`
+-- Dumping data for table `produk`
 --
 
 INSERT INTO `produk` (`id`, `nama_produk`, `harga`, `gambar`, `kelompok`, `katalog`, `diskon`, `ket`, `qty`, `kategori`) VALUES
@@ -204,42 +198,42 @@ INSERT INTO `produk` (`id`, `nama_produk`, `harga`, `gambar`, `kelompok`, `katal
 (19, 'Sony Xperia V LT25i White', 5300000, 'gambar/wdaw.jpg', 'elektronik', '', '', 'Sony Xperia V LT25i, hadir dengan desain stylish, dan unik. Smartphone ini juga ditunjang dengan \r\nOS Android Ice Cream Sandwich v4.0 dan prosesor Dual-core 1.5 GHz Qualcomm MSM8960 Snapdragon, serta Adreno 225. \r\nDilengkapi dengan layar touchscreen 4,3 inch, kamera 13 MP dengan autofocus dan LED flash, memori internal 8 GB \r\ndengan slot kartu memori serta konektivitas Wi-Fi 802.11 b/g/n, dengan kemampuan Wi-Fi Direct, DLNA, Wi-Fi hotspot, \r\nBluetooth v4.0, dan NFC. Xperia V LT25i ini juga mampu bertahan di medan ekstrim karena memiliki fitur water proof \r\ndan water resistant, sehingga sangat cocok untuk Anda yang suka berpetualang.', 71, 'Elektronik'),
 (20, 'Kaos PSHT', 90000, 'kaos', '8', 'gambar/192', '', 'sjjsssssssssssssssss', 0, 'Pakaian'),
 (21, 'Kaos PSHT', 90000, 'gambar/192.jpg', 'pakaian', 'kaos', '', 'sjjsssssssssssssssssddd', 3, 'Pakaian'),
-(22, 'kaos psht terate hijau', 90000, 'gambar/TERA IJO.jpg', 'kaos', '', '', 'Kaos KaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaos', 30, 'kaos psht'),
-(23, 'kaos psht terate hijau', 90000, 'gambar/TERA IJO.jpg', 'kaos', '', '', 'Kaos KaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaos', 30, 'kaos psht'),
-(24, 'kaos psht tendangan t', 90000, 'gambar/10687026_538818476251791_5192189108266288028_n.jpg', 'pakaian', 'kaos', '', 'KaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaosKaos', 7, 'kaos psht'),
-(26, 'jaket holding sweter  psht ', 120000, 'gambar/Alan-Walker.jpg', 'pakaian', 'jaket', '', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 30, 'jaket dj'),
-(27, 'kaos silat psht terate', 120000, 'gambar/Kaos PSHT Kode SH 50 Persaudaraan setia hati Terate  Kaos Psht Kode Sh keren Persaudaraan Setia Hati Terate.jpg', 'pakaian', 'kaos', '10%', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 26, 'kaos psht'),
+(22, 'kaos psht terate hijau', 90000, 'gambar/TERA IJO.jpg', 'kaos', '', '', 'Kaos...', 30, 'kaos psht'),
+(23, 'kaos psht terate hijau', 90000, 'gambar/TERA IJO.jpg', 'kaos', '', '', 'Kaos...', 30, 'kaos psht'),
+(24, 'kaos psht tendangan t', 90000, 'gambar/10687026_538818476251791_5192189108266288028_n.jpg', 'pakaian', 'kaos', '', 'Kaos...', 7, 'kaos psht'),
+(26, 'jaket holding sweter  psht ', 120000, 'gambar/Alan-Walker.jpg', 'pakaian', 'jaket', '', 'jaket...', 30, 'jaket dj'),
+(27, 'kaos silat psht terate', 120000, 'gambar/Kaos PSHT Kode SH 50 Persaudaraan setia hati Terate  Kaos Psht Kode Sh keren Persaudaraan Setia Hati Terate.jpg', 'pakaian', 'kaos', '10%', 'jaket...', 26, 'kaos psht'),
 (28, '', 0, 'gambar/', '', '', '10%', '', 0, ''),
-(29, 'kaos silat psht terate 1922', 100000, 'gambar/Kaos_PSHT_Kode_SH_43_Persaudaraan_setia_hati_Terate.jpg', 'pakaian', 'kaos', '10%', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 9, 'kaos psht'),
-(30, 'sepatu nike sport', 300000, 'gambar/nav_img.jpg', 'olahraga', 'sepatu', '', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 10, 'sepatu nike'),
-(31, 'sepatu nike sport', 300000, 'gambar/pic3.jpg', 'olahraga', 'sepatu', '', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 10, 'sepatu nike'),
-(32, 'sepatu nike sport', 300000, 'gambar/pic5.jpg', 'olahraga', 'sepatu', '', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 10, 'sepatu nike'),
-(33, 'sepatu nike sport', 300000, 'gambar/banner1.jpg', 'olahraga', 'sepatu', '', 'jaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaketjaket', 9, 'sepatu nike');
+(29, 'kaos silat psht terate 1922', 100000, 'gambar/Kaos_PSHT_Kode_SH_43_Persaudaraan_setia_hati_Terate.jpg', 'pakaian', 'kaos', '10%', 'jaket...', 9, 'kaos psht'),
+(30, 'sepatu nike sport', 300000, 'gambar/nav_img.jpg', 'olahraga', 'sepatu', '', 'jaket...', 10, 'sepatu nike'),
+(31, 'sepatu nike sport', 300000, 'gambar/pic3.jpg', 'olahraga', 'sepatu', '', 'jaket...', 10, 'sepatu nike'),
+(32, 'sepatu nike sport', 300000, 'gambar/pic5.jpg', 'olahraga', 'sepatu', '', 'jaket...', 10, 'sepatu nike'),
+(33, 'sepatu nike sport', 300000, 'gambar/banner1.jpg', 'olahraga', 'sepatu', '', 'jaket...', 9, 'sepatu nike');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `produk_temp`
+-- Table structure for table `produk_temp`
 --
 
-CREATE TABLE IF NOT EXISTS `produk_temp` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_pembeli` int(11) NOT NULL,
-  `id_produk` int(11) NOT NULL,
+CREATE TABLE `produk_temp` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_pembeli` int NOT NULL,
+  `id_produk` int NOT NULL,
   `nama_produk` varchar(200) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `total_harga` int(11) NOT NULL,
-  `gambar` varchar(200) NOT NULL,
-  `qty_beli` int(11) NOT NULL,
-  `qty_asli` int(11) NOT NULL,
+  `harga` int NOT NULL,
+  `total_harga` int NOT NULL,
+  `gambar` varchar(255) NOT NULL,
+  `qty_beli` int NOT NULL,
+  `qty_asli` int NOT NULL,
   `kategori` varchar(200) NOT NULL,
-  `ket` int(11) NOT NULL,
-  `jasa_pengiriman` varchar(15) NOT NULL,
+  `ket` int NOT NULL DEFAULT '0',
+  `jasa_pengiriman` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=88 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `produk_temp`
+-- Dumping data for table `produk_temp`
 --
 
 INSERT INTO `produk_temp` (`id`, `id_pembeli`, `id_produk`, `nama_produk`, `harga`, `total_harga`, `gambar`, `qty_beli`, `qty_asli`, `kategori`, `ket`, `jasa_pengiriman`) VALUES
@@ -249,29 +243,30 @@ INSERT INTO `produk_temp` (`id`, `id_pembeli`, `id_produk`, `nama_produk`, `harg
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `selesai`
+-- Table structure for table `selesai`
 --
 
-CREATE TABLE IF NOT EXISTS `selesai` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `id_pembeli` int(11) NOT NULL,
-  `nama` varchar(50) NOT NULL,
-  `jumlah_barang` int(11) NOT NULL,
-  `jumlah_bayar` int(11) NOT NULL,
+CREATE TABLE `selesai` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `id_pembeli` int NOT NULL,
+  `nama` varchar(100) NOT NULL,
+  `jumlah_barang` int NOT NULL,
+  `jumlah_bayar` int NOT NULL,
   `tanggal_beli` varchar(50) NOT NULL,
-  `alamat` varchar(100) NOT NULL,
-  `kabupaten` varchar(20) NOT NULL,
-  `kecamatan` varchar(20) NOT NULL,
-  `provinsi` varchar(20) NOT NULL,
-  `kode_pos` varchar(10) NOT NULL,
-  `no_telp` varchar(15) NOT NULL,
-  `jasa_pengiriman` varchar(20) NOT NULL,
+  `alamat` text NOT NULL,
+  `kabupaten` varchar(100) NOT NULL,
+  `kecamatan` varchar(100) NOT NULL,
+  `provinsi` varchar(100) NOT NULL,
+  `kode_pos` varchar(20) NOT NULL,
+  `no_telp` varchar(20) NOT NULL,
+  `jasa_pengiriman` varchar(100) NOT NULL,
   `konfir` varchar(50) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+  PRIMARY KEY (`id`),
+  KEY `id_pembeli` (`id_pembeli`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data untuk tabel `selesai`
+-- Dumping data for table `selesai`
 --
 
 INSERT INTO `selesai` (`id`, `id_pembeli`, `nama`, `jumlah_barang`, `jumlah_bayar`, `tanggal_beli`, `alamat`, `kabupaten`, `kecamatan`, `provinsi`, `kode_pos`, `no_telp`, `jasa_pengiriman`, `konfir`) VALUES
@@ -283,6 +278,16 @@ INSERT INTO `selesai` (`id`, `id_pembeli`, `nama`, `jumlah_barang`, `jumlah_baya
 (19, 5, 'eva', 1, 9000000, '29-11-2016', 'desa karang tengah rt 02 rw 08', 'Nganjuk', 'Patianrowo', 'Jawa Timur', '88373', '0833736333', '', 'N'),
 (20, 5, 'eva', 2, 10000000, '29-11-2016', 'desa karang tengah rt 02 rw 08', 'Nganjuk', 'Patianrowo', 'Jawa Timur', '88373', '0833736333', 'POS REGULER', 'N'),
 (21, 5, 'eva', 1, 8000000, '29-11-2016', 'desa karang tengah rt 02 rw 08', 'Nganjuk', 'Patianrowo', 'Jawa Timur', '88373', '0833736333', 'POS KILAT', 'N');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `selesai`
+--
+ALTER TABLE `selesai`
+  ADD CONSTRAINT `selesai_ibfk_1` FOREIGN KEY (`id_pembeli`) REFERENCES `pembeli` (`id_pembeli`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
